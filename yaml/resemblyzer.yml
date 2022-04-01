@@ -1,0 +1,50 @@
+extract_feature:
+        module_path: feature_extractors
+        module_name: extract_melspectrogram.py
+        class_name: extract_melspectrogram
+        kwargs:
+                sample_rate: 16000
+                mel_window_length: 25
+                mel_window_step: 10
+                mel_n_channels: 40
+                msecs: 1000
+
+model:
+        module_path: models
+        module_name: voice_encoder.py
+        class_name: voice_encoder
+        kwargs:
+                mel_n_channels: 40
+                model_num_layers: 3 
+                model_hidden_size: 256
+                model_embedding_size: 256
+
+model_loader:
+        module_path: scripts
+        module_name: model_loader.py
+        class_name: model_loader
+        kwargs:
+                state_dict_path: pretrain\voice_encoder.pt 
+                use_cuda: True
+                to_eval: True
+                device_str: cuda:{}
+                cuda_num: 0
+                map_location: cpu 
+
+ 
+load_audio:
+        module_path: scripts
+        module_name: audio_loader.py
+        class_name: audio_loader
+        kwargs:
+                resample: null
+                normalize_vol: True
+                target_dBFS: -30
+                increase_only: True
+                wav_winlen: 1.6
+                return_last: True
+                match_samps: True
+                trim_silence: True
+                vad_mode: silero
+                msecs: 1000
+                to_torch: True

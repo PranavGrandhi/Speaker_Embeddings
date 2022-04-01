@@ -1,0 +1,49 @@
+feats:
+        module_path: feature_extractors
+        module_name: extract_melspectrogram.py
+        class_name: extract_melspectrogram
+        kwargs:
+                sample_rate: 1600
+                mel_window_length: 25
+                mel_window_step: 10
+                mel_n_channels: 40
+                msecs: 1000
+
+
+model:
+        module_path: models
+        module_name: voice_encoder.py
+        class_name: voice_encoder
+        kwargs:
+                mel_n_channels: 40
+                model_num_layers: 3 
+                model_hidden_size: 256
+                model_embedding_size: 256
+
+
+#model:
+#        module_path: models
+#        module_name: xvector.py
+#        class_name: xvector
+#        kwargs:
+#                feat_dim: 10
+#                tdnn_size: 1500
+#                config_str: batchnorm-relu
+
+
+audio:
+        module_path: scripts
+        module_name: audio_loader.py
+        class_name: audio_loader
+        kwargs:
+                resample: None
+                normalize_vol: True
+		target_dBFS: -30,		
+		increase_only: True
+		wav_winlen: 1.6
+		return_last: True
+		match_samps: True
+		trim_silence: True
+		vad_mode: webrtc
+		msecs: 1000
+		to_torch: True

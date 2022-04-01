@@ -1,0 +1,46 @@
+This is the speaker embedding repository.
+This repo is to collect various speaker embedders.
+
+Author: Lim Zhi Hao		Date: 2022-03-22
+
+These embedding networks can be used in:
+	1) Speaker Verification and Identification
+	2) Speaker Diarization
+	3) Speaker Extraction
+	4) Antispoofing for Speaker Verification
+	5) Text-to-Speech
+	6) Voice Conversion
+
+--------------------------------------------------------------------
+
+For a start, check conda version:
+
+	conda -V
+
+As of 2022-03-22, the scripts are tested in conda 4.12.0. 
+
+********************************************************************
+
+
+--------------------------------------------------------------------
+
+Then initate the conda environment using the "speaker_embeddings.yml"
+
+	conda env create --file speaker_embeddings.yml
+	conda activate speaker_embeddings
+
+
+********************************************************************
+
+
+--------------------------------------------------------------------
+
+Finally, please run the following:
+
+	bash run.sh
+
+This will run the pipeline on "test_audio/librispeech_test-other"
+
+To learn more about the pipeline, please see scripts/run_batch.py
+
+********************************************************************

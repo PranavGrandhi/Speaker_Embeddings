@@ -91,6 +91,6 @@ The following is the UMAP projection for 10 speakers chosen from the LibriSpeech
 ![plot](./png/MyDataXvector.png)
 
 ## Authors
-Zhi Hao Lim (School of Computer Science and Engineering, NTU)
+Zhi Hao Lim 
 
-Pranav V Grandhi (Computer Science, BITS Pilani, Hyderabad Campus)
+Pranav V Grandhi 

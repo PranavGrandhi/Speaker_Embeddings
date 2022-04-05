@@ -89,3 +89,7 @@ The following is the UMAP projection for 10 speakers chosen from the LibriSpeech
 The following is the UMAP projection for 10 speakers chosen from the LibriSpeech ASR corpus. The embedding chosen was Xvectors. 
 
 ![plot](./png/MyDataXvector.png)
+
+## Authors
+Zhi Hao Lim (School of Computer Science and Engineering, NTU)
+Pranav V Grandhi (Computer Science, BITS Pilani, Hyderabad Campus)

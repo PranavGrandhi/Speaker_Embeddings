@@ -80,7 +80,12 @@ The following are the steps involved in the pipeline
 5. These Embeddings can be plotted using either T-SNE or UMAP for visualization. The final images are stored in png directory.
 
 ## Results
+
 The following is the UMAP projection for 10 speakers chosen from the LibriSpeech ASR corpus. The embedding chosen was Resemblyzer. 
+
 ![plot](./png/MyDataResemblyzer.png)
+
+
 The following is the UMAP projection for 10 speakers chosen from the LibriSpeech ASR corpus. The embedding chosen was Xvectors. 
+
 ![plot](./png/MyDataXvector.png)

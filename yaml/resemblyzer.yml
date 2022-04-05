@@ -25,7 +25,7 @@ model_loader:
         class_name: model_loader
         kwargs:
                 state_dict_path: pretrain\voice_encoder.pt 
-                use_cuda: True
+                use_cuda: False
                 to_eval: True
                 device_str: cuda:{}
                 cuda_num: 0

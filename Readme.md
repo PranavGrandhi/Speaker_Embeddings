@@ -80,3 +80,5 @@ The following are the steps involved in the pipeline
 5. These Embeddings can be plotted using either T-SNE or UMAP for visualization. The final images are stored in png directory.
 
 ## Results
+![plot](./png/MyDataResemblyzer.png)
+![plot](./png/MyDataXvector.png)

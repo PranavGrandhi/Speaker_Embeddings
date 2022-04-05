@@ -30,8 +30,6 @@ def get_cuda_num(use_cuda : bool = True,
 	else:
 		device = 'cpu'
 
-	#print("Device is " + device)
-
 	return device
 
 
@@ -43,7 +41,7 @@ class model_loader():
 		to_eval : bool = False,
 		device_str : str = 'cuda:{}',
 		cuda_num : int = 0,
-		map_location : str = 'cuda',
+		map_location : str = 'cpu',
 		default_load_key : str = 'model_state',
 		strict : bool = False): 
 
@@ -77,7 +75,7 @@ class model_loader():
 			model.load_state_dict(state_dict, strict = self.strict)			
 	
 			if self.use_cuda:
-				model.to(device("cuda"))			
+				model.to(self.device)			
 	
 			if self.to_eval:
 				model.eval()	

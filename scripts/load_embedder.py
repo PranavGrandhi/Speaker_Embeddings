@@ -26,8 +26,6 @@ class load_embedder():
 		# Load Embedder class from config dictionary
 		self.embedder = dict2class(self.config)	
 
-		print(self.embedder.model_loader)
-
 		# Load Pretain model
 		self.load_pretrain()
 
@@ -39,11 +37,8 @@ class load_embedder():
 		self.device = device
 
 	def __call__(self, audio_file : Path):
-		#audio_file = ".\\" / audio_file
-		#print(audio_file)
 		features = self.embedder.load_audio.load(audio_file, 
 						self.embedder.extract_feature)
-		print(features)
 
 		if features is not None:
 			embeddings = self.embedder.model(features.to(self.device))		

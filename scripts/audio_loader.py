@@ -122,9 +122,7 @@ class audio_loader():
 		'''
 		
 		# Load audio file based on sample rate
-		#print(audiofile)
-		audio = AudioSegment.from_file(audiofile)
-		print("loaded audiofile")		
+		audio = AudioSegment.from_file(audiofile)	
 		if self.resample and self.resample != audio.frame_rate:
 			audio = audio.set_frame_rate(self.resample)
 
@@ -143,24 +141,16 @@ class audio_loader():
 			else:
 				features.append(array)		
 
-		print("done features")
-		#print(features)
-
 		# Stack them into batch (ndim == 3)
 		if features:	
 			features = stack(features)
-			print("Done stacking")
 		
 			# Convert to torch if needed
 			if self.to_torch:
 				features = from_numpy(features)
-				print("torch done")
-				#print(features)
 		else:
 			features = None	
 
-		print("fully done")
-		#print(features)
 		return features
 		
 
